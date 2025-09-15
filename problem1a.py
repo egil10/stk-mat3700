@@ -29,7 +29,7 @@ annual_returns = returns.mean() * 252
 annual_volatilities = returns.std() * np.sqrt(252)
 
 print("\n=== PROBLEM 1a RESULTS ===")
-print("\nExpected Returns (Annualized):")cls
+print("\nExpected Returns (Annualized):")
 
 for col in data.columns:
     print(f"{col}: {annual_returns[col]:.4f} ({annual_returns[col]*100:.2f}%)")
