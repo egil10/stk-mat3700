@@ -1,119 +1,146 @@
-# STK-MAT3700/4700 Assignment 1: Portfolio Optimization and Black-Scholes Options Pricing
+# STK-MAT3700 - Introduction to Mathematical Finance and Investment Theory
 
-This repository contains the complete solution for the mandatory assignment in STK-MAT3700/4700.
+This repository contains assignments and coursework for **STK-MAT3700 - Introduction to Mathematical Finance and Investment Theory** at the University of Oslo.
 
-## Assignment Overview
+## Course Information
 
-The assignment consists of two main problems:
+**Course:** STK-MAT3700 - Introduction to Mathematical Finance and Investment Theory  
+**Credits:** 10  
+**Level:** Bachelor  
+**Institution:** University of Oslo  
+**Course Page:** [https://www.uio.no/studier/emner/matnat/math/STK-MAT3700/index-eng.html](https://www.uio.no/studier/emner/matnat/math/STK-MAT3700/index-eng.html)
 
-### Problem 1: Markowitz Portfolio Optimization
-- Download and analyze 5 stock price series
-- Calculate expected returns and volatilities
-- Plot empirical vs normal distributions
-- Calculate correlation and covariance matrices
-- Generate efficient frontier
-- Find minimum variance portfolio
-- Compare 5-asset vs 4-asset portfolios
+## Course Description
 
-### Problem 2: Black-Scholes Options Pricing
-- Implement Black-Scholes formula
-- Calculate option prices for different volatilities and strikes
-- Analyze implied volatility patterns
-- Compare theoretical vs realistic market behavior
+The course gives an introduction to the most important notions and problems in mathematical finance. The theory of arbitrage for pricing and hedging derivatives (options) will be studied in the context of discrete and continuous time stochastic models, with the famous Black-Scholes option pricing formula as a highlight. Moreover the course will focus on the theory of investments with special stress given to utility optimization and the Markowitz theory for optimal portfolio choice.
 
-## Files Included
+## Learning Outcomes
 
-- `stk_mat3700_assignment1.py` - Complete Python script with all solutions
-- `stk_mat3700_assignment1.ipynb` - Jupyter notebook version for interactive analysis
-- `requirements.txt` - Required Python packages
-- `README.md` - This file
+Upon completion of this course, students should:
 
-## Setup Instructions
+- Develop hedging strategies for derivatives in tree-models
+- Price using no-arbitrage and hedging principles in tree-models
+- Know the concept of risk-neutral probability
+- Develop the Black-Scholes option pricing formula as a limit of tree-models
+- Apply the Black-Scholes formula to price and hedge plain-vanilla options in finance
+- Create portfolios that balance profit and risk optimally
 
-1. **Install Python Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Prerequisites
 
-2. **Run the Assignment:**
-   
-   **Option A: Python Script**
-   ```bash
-   python stk_mat3700_assignment1.py
-   ```
-   
-   **Option B: Jupyter Notebook**
-   ```bash
-   jupyter notebook stk_mat3700_assignment1.ipynb
-   ```
+**Recommended previous knowledge:**
+- MAT1100 – Calculus
+- MAT1110 – Calculus and Linear Algebra
+- MAT1120 – Linear Algebra / MAT1125 – Advanced linear algebra
+- STK1100 – Probability and Statistical Modelling
+- STK2130 – Modelling by Stochastic Processes (useful but not required)
 
-## Required Packages
+## Repository Structure
 
+```
+stk-mat3700/
+├── oblig1/              # Assignment 1 solutions
+│   ├── 1a.R            # Problem 1a: Returns analysis
+│   ├── 1b.R            # Problem 1b: Correlation and covariance
+│   ├── 1c.R            # Problem 1c: Efficient frontier
+│   ├── 1d.R            # Problem 1d: Portfolio optimization
+│   ├── 2a.R            # Problem 2a: Black-Scholes implementation
+│   ├── 2b.py           # Problem 2b: Implied volatility
+│   ├── data/           # Financial data files
+│   │   └── finance_data.csv
+│   ├── plots/          # Generated plots and visualizations
+│   └── oblig1.pdf      # Assignment description
+├── rsc/                # Course resources
+│   ├── stk-mat3700 eksamen 2024-2020.pdf
+│   └── stk-mat3700 oblig 1.pdf
+└── README.md           # This file
+```
+
+## Assignment 1 Overview
+
+The mandatory assignment covers two main areas:
+
+### Problem 1: Portfolio Optimization (Markowitz Theory)
+- Analysis of financial returns and their distributions
+- Calculation of correlation and covariance matrices
+- Construction of efficient frontiers
+- Minimum variance portfolio optimization
+- Comparison of different portfolio configurations
+
+### Problem 2: Black-Scholes Option Pricing
+- Implementation of the Black-Scholes formula
+- Option pricing for various scenarios
+- Implied volatility calculations
+- Analysis of volatility patterns
+
+## Requirements
+
+### R Packages
+The R scripts require the following packages:
+- `tidyverse` - Data manipulation and visualization
+- Additional packages as specified in individual scripts
+
+### Python Packages
+The Python script (`2b.py`) may require:
 - `numpy` - Numerical computations
-- `pandas` - Data manipulation
+- `scipy` - Scientific computing
 - `matplotlib` - Plotting
-- `seaborn` - Statistical visualization
-- `scipy` - Optimization and statistical functions
-- `yfinance` - Stock data download
+- Additional packages as needed
 
-## Data Sources
+## Usage
 
-The script automatically downloads stock data from Yahoo Finance for the following symbols:
-- AAPL (Apple)
-- MSFT (Microsoft)
-- GOOGL (Google/Alphabet)
-- AMZN (Amazon)
-- TSLA (Tesla)
+### Running R Scripts
+```r
+# Navigate to the oblig1 directory
+cd oblig1
 
-You can modify the `symbols` list in the script to use different stocks if desired.
+# Run individual problem scripts
+Rscript 1a.R
+Rscript 1b.R
+Rscript 1c.R
+Rscript 1d.R
+Rscript 2a.R
+```
 
-## Key Features
+### Running Python Scripts
+```bash
+# Navigate to the oblig1 directory
+cd oblig1
 
-### Portfolio Optimization
-- Automatic data download and preprocessing
-- Risk-return analysis with visualizations
-- Efficient frontier generation
-- Minimum variance portfolio calculation
-- Portfolio comparison (5 vs 4 assets)
+# Run the Python script
+python 2b.py
+```
 
-### Black-Scholes Implementation
-- Complete Black-Scholes formula implementation
-- Option pricing for multiple scenarios
-- Implied volatility calculation using bisection method
-- Volatility smile analysis
-- Theoretical vs realistic market behavior comparison
+## Data
+
+Financial data is stored in `oblig1/data/finance_data.csv`. The data includes trading day information and asset prices for various financial instruments.
 
 ## Output
 
-The script generates:
-1. **Statistical tables** with asset returns, volatilities, and correlations
-2. **Distribution plots** comparing empirical vs normal distributions
-3. **Correlation heatmaps** showing asset relationships
-4. **Efficient frontier plots** with individual assets and minimum variance portfolio
-5. **Option pricing tables** for different volatilities and strikes
-6. **Implied volatility plots** showing theoretical vs realistic patterns
+Generated plots and visualizations are saved in the `oblig1/plots/` directory, including:
+- Return distributions
+- Correlation matrices
+- Efficient frontiers
+- Black-Scholes option pricing results
+- Implied volatility analyses
 
-## Customization
+## Course Resources
 
-You can easily customize the analysis by modifying:
-- Stock symbols in the `symbols` list
-- Date range for data download
-- Risk-free rate for option pricing
-- Number of portfolios on the efficient frontier
-- Volatility scenarios for option pricing
+Additional course materials, including past exam papers and assignment descriptions, are available in the `rsc/` directory.
+
+## Examination
+
+This course has **1 mandatory assignment** that must be approved before sitting the final exam. The final written exam counts 100% towards the final grade.
 
 ## Academic Integrity
 
-This solution is provided as a reference for understanding the concepts. Please ensure you:
-- Understand all calculations and methodologies
-- Can explain the results and interpretations
-- Use this as a learning tool, not for direct submission
-- Follow your institution's academic integrity policies
+This repository is for educational purposes. Please ensure you understand all concepts and can explain the methodologies used. Follow your institution's academic integrity policies.
 
-## Contact
+## License
 
-For questions about this implementation, please refer to the course materials or consult with your instructor.
+This repository is for personal academic use as part of coursework at the University of Oslo.
 
 ---
 
-**Note:** This assignment requires internet connection for downloading stock data. If you encounter issues with data download, you can use the provided sample data or modify the script to use local data files.
+**Last Updated:** 2025  
+**Course:** STK-MAT3700 - Introduction to Mathematical Finance and Investment Theory  
+**University of Oslo**
